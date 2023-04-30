@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 const todo: CreateTodoInput = { title: "My first todo", desc: "Hello world!" };
 
 function App() {
-  const [todoIds, setTodoIds] = useState<string[]>([""]);
+  const [todos, setTodos] = useState<any[]>([]);
   const [selectedTodoId, setSelectedTodoId] = useState<string>("");
   const [title, setTitle] = useState<string>("");
 
@@ -28,9 +28,14 @@ function App() {
           desc
           createdAt
           updatedAt
+          _verion
         }
       }
-    `, { input: { id: selectedTodoId || todoIds[0], title, _version: 20}})); // Error: Client version is greater than the corresponding server version.
+    `, { input: {
+      id: selectedTodoId || todos[0].id,
+      title,
+      // _version: todos.find((todo) => todo.id === selectedTodoId)._version
+    }}));
       console.log(ret);
     } catch (error) {
       console.error(error);
@@ -50,13 +55,14 @@ function App() {
           desc
           createdAt
           updatedAt
+          _verion
         }
         nextToken
         startedAt
       }
     }`));
     console.log(todos);
-    setTodoIds(todos.data?.listTodos?.items?.map((todo) => todo?.id || "") || []);
+    setTodos(todos.data?.listTodos?.items || []);
   }
 
   useEffect(() => {
@@ -71,7 +77,7 @@ function App() {
       <hr />
       <div>
         todoIDs: <select name="todoids" id="todoids" onChange={e => setSelectedTodoId(e.target.value)}>
-          {todoIds.map((id) => <option key={id} value={id}>{id}</option>)}
+          {todos.map((todo) => <option key={todo.id} value={todo.id}>{todo.id}</option>)}
         </select>
       </div>
       <div>
