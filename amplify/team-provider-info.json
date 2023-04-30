@@ -10,6 +10,11 @@
       "StackName": "amplify-mocktest-staging-133420",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:176265990387:stack/amplify-mocktest-staging-133420/8c48fa40-e692-11ed-9728-0ad2deb1c099",
       "AmplifyAppId": "dn7jxgr86harp"
+    },
+    "categories": {
+      "api": {
+        "mocktest": {}
+      }
     }
   }
 }
