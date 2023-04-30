@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mocktest-staging-133420-authRole",
+      "UnauthRoleArn": "arn:aws:iam::176265990387:role/amplify-mocktest-staging-133420-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::176265990387:role/amplify-mocktest-staging-133420-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-mocktest-staging-133420-deployment",
+      "UnauthRoleName": "amplify-mocktest-staging-133420-unauthRole",
+      "StackName": "amplify-mocktest-staging-133420",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:176265990387:stack/amplify-mocktest-staging-133420/8c48fa40-e692-11ed-9728-0ad2deb1c099",
+      "AmplifyAppId": "dn7jxgr86harp"
+    }
+  }
+}
